@@ -58,12 +58,13 @@ router.get('/', function(req, res, next){
         const { access_token, token_type } = response.data;
         console.log(access_token);
         console.log("dogs");
+        const go_back = 'http://localhost:3000/spotify';
         
         axios.get("https://api.spotify.com/v1/me", {headers: {
             Authorization: 'Bearer ' + `${access_token}`
         }}).then(response => {
             if(response.status == 200){
-                res.send(`<pre>${JSON.stringify(response.data, null,2)}</pre>`);
+                res.send(`<pre>${JSON.stringify(response.data, null,2)}<a href = ${go_back}>Click Here to go back</a>}</pre>`);
             } else{
                 res.send(response);
             }

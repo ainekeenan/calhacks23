@@ -15,7 +15,6 @@ function App() {
     <div> 
       <Welcome /> 
       <Router>
-      {code ? code : "birthday"}
         <ul>
           <li><a href = "/spotify">Login/Token</a></li>
         </ul>
