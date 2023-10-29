@@ -64,7 +64,7 @@ router.get('/', function(req, res, next){
             Authorization: 'Bearer ' + `${access_token}`
         }}).then(response => {
             if(response.status == 200){
-                res.send(`<pre>${JSON.stringify(response.data, null,2)}<a href = ${go_back}>Click Here to go back</a>}</pre>`);
+                res.send(`<pre> <h1>Data about your spotify account</h1> ${JSON.stringify(response.data, null,2)}<a href = ${go_back}>Click Here to go back</a>}</pre>`);
             } else{
                 res.send(response);
             }
