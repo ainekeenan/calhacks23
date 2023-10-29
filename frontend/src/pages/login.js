@@ -8,7 +8,7 @@ const Login = () => {
     const url = `https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}&scopes=${scopes}&response_type=${response_type}`;
     return(
         <div>
-            <a href = {url}>Click Here to Login</a>
+            <a href = {url} >Click Here to Login</a>
         </div>
     );
 
