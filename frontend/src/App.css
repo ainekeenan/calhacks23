@@ -40,3 +40,14 @@
 *{
   text-align: center
 }
+
+h1{
+  color:rgb(63, 100, 220);
+  font-family: 'IM Fell DW Pica';
+}
+
+body{
+  color: #2E475D;
+  /* font-family: 'IM Fell DW Pica'; */
+  font-family: 'Lexend Deca';
+}
