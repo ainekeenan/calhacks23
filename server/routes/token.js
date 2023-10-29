@@ -55,12 +55,29 @@ router.get('/', function(req, res, next){
             'Authorization': Authorization
         },
     }).then(response => {
+        const { access_token, token_type } = response.data;
+        console.log(access_token);
+        console.log("dogs");
+        
+        axios.get("https://api.spotify.com/v1/me", {headers: {
+            Authorization: 'Bearer ' + `${access_token}`
+        }}).then(response => {
+            if(response.status == 200){
+                res.send(`<pre>${JSON.stringify(response.data, null,2)}</pre>`);
+            } else{
+                res.send(response);
+            }
+        }) .catch(error => console.log(error));
+      
+        
+    }).catch(error => console.log(error))
+    
+    /*.then(response => {
         if(response.status === 200) {
             res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
           } else {
             res.send(response);
-          } })
-    .catch(error => console.log(error))
+          } }) */
   
 
 })
