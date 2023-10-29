@@ -20,7 +20,7 @@ function App() {
           <li><a href = "/spotify">Login/Token</a></li>
         </ul>
         <Routes>
-          <Route path = "/spotify" element = {code ? <Token code = {code}/> :<Login/>} ></Route>
+          <Route path = "/spotify" element = {code ? <Token code = {code}/>: <Login/>} ></Route>
         </Routes>
       </Router>
     </div>
